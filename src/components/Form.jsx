@@ -94,6 +94,7 @@ const Form = (props) => {
   return (
     <div className="container">
       <form onSubmit={submit}>
+        <h1 style={{color: 'black'}}>Register Customer</h1>
         <div>
           <label htmlFor="customerName">Customer Name:</label>
           <input
@@ -239,6 +240,7 @@ const Form = (props) => {
             <option value="555">Credit Cards</option>
           </select>
         </div>
+
         <div
           style={{
             display: 'flex',
@@ -253,7 +255,10 @@ const Form = (props) => {
           >
             Logout
           </button>
-          &nbsp;<button type="submit">Submit</button>
+          {/* Non breaking space */}
+          &nbsp;
+           &nbsp;
+          <button type="submit">Submit</button>
         </div>
         {success && (
           <div className="generic-success">

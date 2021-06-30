@@ -5,9 +5,11 @@ const Login = (props) => {
   const [user, setUsername] = useState('');
   const [pass, setPassword] = useState('');
   const [loginError, setLoginError] = useState(false);
+
+
   const submit = (e) => {
     e.preventDefault();
-    if (user === 'admin') {
+    if (user === 'admin' && pass==="admin") {
       props.setIsAuthenticated(true);
     }
     axios
@@ -26,7 +28,8 @@ const Login = (props) => {
     <div className="container">
       <form onSubmit={submit}>
         <div>
-          <label htmlFor="username">Username:</label>
+          <h1 style={{color: 'black'}}>DBS Login</h1>
+          <label htmlFor="username">Admin Username:</label>
           <input
             type="text"
             autoComplete="off"
