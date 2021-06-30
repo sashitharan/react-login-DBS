@@ -1,14 +1,12 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 
-const Form = () => {
+const Form = (props) => {
   const [customerName, setCustomerName] = useState('');
   const [customerAge, setCustomerAge] = useState(0);
-  const [serviceOfficerName, setServiceOfficerName] = useState('');
-
+  const [serviceOfficerName, setserviceOfficerName] = useState('');
   const [NRIC, setNRIC] = useState('');
   const [branchCode, setBranchCode] = useState('');
-
   const [image, setImage] = useState('');
   const [success, setSuccess] = useState(false);
 
@@ -18,6 +16,7 @@ const Form = () => {
   const [NRICError, setNRICError] = useState(false);
   const [branchCodeError, setBranchCodeError] = useState(false);
   const [imageError, setImageError] = useState(false);
+
   const handleImageUpload = () => {
     let fileInput = document.getElementById('image');
     let filePath = fileInput.value;
@@ -265,4 +264,5 @@ const Form = () => {
     </div>
   );
 };
+
 export default Form;

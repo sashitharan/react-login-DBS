@@ -1,14 +1,19 @@
+import React, {useState} from 'react';
+import Login from './components/login';
+import Form from './components/form';
 import './App.scss';
-import Login from './components/Login';
-import Form from './components/Form';
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   return (
-    <div className="App">
-      <Login />
-      <Form />
-     
-    </div>
+    <>
+      {isAuthenticated ? (
+        <Form setIsAuthenticated={setIsAuthenticated} />
+      ) : (
+        <Login setIsAuthenticated={setIsAuthenticated} />
+      )}
+    </>
   );
 }
 
